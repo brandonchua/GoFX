@@ -113,7 +113,7 @@ import (
 )
 
 func main() {
-	curList, _ := gocurrency.AvailableCurrencies()
+	curList, _ := gofx.AvailableCurrencies()
 
 	for _, currency := range curList {
 		fmt.Println(currency.Description)
@@ -188,13 +188,13 @@ import (
 )
 
 func main() {
-	curList, _ := gocurrency.AvailableCurrencies()
+	curList, _ := gofx.AvailableCurrencies()
 
-	dollar := gocurrency.NewCurrency("USD")
+	dollar := gofx.NewCurrency("USD")
         amount := decimal.NewFromFloat(100.00)
 
 	for _, currency := range curList {
-		conv, _ := gocurrency.ConvertCurrency(dollar, currency, amount)
+		conv, _ := gofx.ConvertCurrency(dollar, currency, amount)
 
 		fmt.Printf("%-3s %-8s --> %-3s %s\n", dollar.ID, amount, currency.ID, conv)
 	}
@@ -266,7 +266,7 @@ PRs are welcome. To begin developing, do this:
 
 ```bash
 $ git clone https://github.com/brandonchua/gofx.git gocurrency
-$ cd gocurrency/
+$ cd gofx/
 $ go get -v -d 
 ```
 
